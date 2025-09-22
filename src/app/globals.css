@@ -1,0 +1,235 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+/*Global CSS*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--white);
+  font-family: var(--inter), sans-serif !important;
+}
+
+/*Font Families Import*/
+@font-face {
+  font-family: "Inter";
+  src: local("Inter"), url("../fonts/Inter.ttf") format("truetype");
+}
+
+/*Root Element*/
+:root {
+  /* Fonts */
+  --inter: Inter, sans-serif;
+
+  /* Font-Sizes for Laptop */
+  --h1: 3.125rem; /*50px*/
+  --h2: 2.625rem; /*42px*/
+  --h3: 2rem; /*32px*/
+  --h4: 1.5rem; /*24px*/
+  --h5: 1.25rem; /*20px*/
+  --h6: 1rem; /*16px*/
+  --xl: 1.125rem; /* 18px */
+  --lg: 1rem; /* 16px */
+  --md: 0.875rem; /* 14px */
+  --sm: 0.75rem; /* 12px */
+
+  /*Colors*/
+  --white: #ffffff;
+  --gray: "#999";
+  --light-gray: #e3e3e3;
+  --vavid-gray: #969696;
+  --medium-gray: #111;
+  --dark-gray: #0d0d0d;
+  --blue: #1140ff;
+  --sky-blue: #00a3ff;
+  --river-blue: #0d2a52;
+  --light-blue: #edf9ff;
+  --dark-blue: #000f1f;
+  --purple-blue: #0f1c51;
+  --button-light-blue: #2faef5;
+  --button-dark-blue: #0f2686;
+}
+
+/*Media Queries ( Tablet ) for fonts*/
+@media (min-width: 768px) and (max-width: 1023px) {
+  :root {
+    --h1: 2.875rem; /*46px*/
+    --h2: 2.313rem; /*37px*/
+    --h3: 2rem; /*32px*/
+    --h4: 1.5rem; /*24px*/
+    --h5: 1.125rem; /*18px*/
+    --h6: 1rem; /*16px*/
+    --xl: 1.125rem; /* 18px */
+    --lg: 1rem; /* 16px */
+    --md: 0.875rem; /* 14px */
+    --sm: 0.75rem; /* 12px */
+  }
+}
+
+/*Media Queries ( Mobile ) for fonts*/
+@media (max-width: 767px) {
+  :root {
+    --h1: 2.625rem; /*42px*/
+    --h2: 2rem; /*32px*/
+    --h3: 1.75rem; /*28px*/
+    --h4: 1.5rem; /*24px*/
+    --h5: 1.125rem; /*18px*/
+    --h6: 1rem; /*16px*/
+    --xl: 1.125rem; /* 18px */
+    --lg: 1rem; /* 16px */
+    --md: 0.875rem; /* 14px */
+    --sm: 0.75rem; /* 12px */
+  }
+}
+
+/* Global Styling */
+.motive-bg-gradient {
+  background: linear-gradient(109deg, #007fb1 0%, #0031b5 77.3%);
+}
+
+.accordion-bg-gradient {
+  /* background: linear-gradient(
+    99deg,
+    rgba(47, 174, 245, 0.1) 0%,
+    rgba(17, 64, 255, 0.1) 100%
+  );
+  backdrop-filter: blur(30px); */
+  background: white;
+}
+/* Half Line Gradient */
+.hr-gradient {
+  background: linear-gradient(90deg, #999 0%, rgba(153, 153, 153, 0) 100%);
+}
+/* Motive Line Gradient */
+.hr-gradient2 {
+  background: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+}
+/* Full Line Gradient */
+.hr-gradient3 {
+  background: linear-gradient(
+    90deg,
+    rgba(153, 153, 153, 0) 0%,
+    #999 50%,
+    rgba(153, 153, 153, 0) 100%
+  );
+}
+
+/* Button Transition */
+.button-gradient {
+  background: linear-gradient(
+      99deg,
+      #2597f9,
+      #1a69fc,
+      #1140ff,
+      #1140ff,
+      #2597f9,
+      #1a69fc,
+      #1140ff,
+      #1140ff
+    )
+    no-repeat;
+  background-size: 300%;
+  transition: background 1.2s ease;
+}
+
+.button-gradient:hover {
+  background-position: right center;
+}
+
+.transition-max-height {
+  transition-property: max-height;
+}
+/* Circle Ring */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+/* Background Images Styling*/
+/* .hero-background {
+  background-image: url("/public/assets/Images/block-med-chain.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+} */
+
+/* .hero-background::before {
+  content: "";
+  inset: 0;
+  background-image: url("/public/assets/Images/shadow.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: -10rem;
+  position: absolute;
+  z-index: -1;
+  opacity: 0.6;
+} */
+
+/* Responsive Screen Designs */
+@media (max-width: 768) {
+  .alice-carousel__stage-item {
+    width: 35% !important;
+  }
+}
+/* @media (max-width: 1023px) {
+  .hero-background {
+    background-size: cover;
+  }
+} */
+
+/* Hide arrows for Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide arrows for Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+select#countryCode {
+  background-repeat: no-repeat;
+  background-size: 12px;
+  background-position: 85% 50%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23969696' d='M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z'/%3E%3C/svg%3E");
+}
+
+.max-w-site {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.values_card {
+  transition: background 1.2s ease;
+}
+
+.values_card:hover {
+  background: linear-gradient(
+      99deg,
+      #2597f9,
+      #1a69fc,
+      #1140ff,
+      #1140ff,
+      #2597f9,
+      #1a69fc,
+      #1140ff,
+      #1140ff
+    )
+    no-repeat;
+  background-size: 300%;
+  transition: background 1.2s ease;
+  color: white;
+}
